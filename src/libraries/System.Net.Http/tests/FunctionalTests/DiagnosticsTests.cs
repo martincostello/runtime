@@ -1776,7 +1776,7 @@ namespace System.Net.Http.Functional.Tests
                         await client.SendAsync(bool.Parse(testAsync), request);
 
                         // There should be only one Activity for the request. Server address should match the Uri host.
-                        // https://github.com/open-telemetry/semantic-conventions/blob/728e5d1/docs/http/http-spans.md#http-client-span
+                        // https://github.com/open-telemetry/semantic-conventions/blob/v1.40.0/docs/http/http-spans.md#http-client-span
                         ActivityAssert.HasTag(requestRecorder.FinishedActivities.Single(), "server.address", IPAddress.Loopback.ToString());
 
                         // Check the SslProxyTunnel connection only, it should use the host header.

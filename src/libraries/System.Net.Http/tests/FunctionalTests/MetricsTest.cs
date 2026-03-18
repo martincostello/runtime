@@ -1134,7 +1134,7 @@ namespace System.Net.Http.Functional.Tests
                 requestDurationRecorder.VerifyHistogramBucketBoundaries = b =>
                 {
                     // Verify first and last value of the boundaries defined in
-                    // https://github.com/open-telemetry/semantic-conventions/blob/release/v1.23.x/docs/http/http-metrics.md#metric-httpserverrequestduration
+                    // https://github.com/open-telemetry/semantic-conventions/blob/v1.40.0/docs/http/http-metrics.md#metric-httpclientrequestduration
                     Assert.Equal(0.005, b.First());
                     Assert.Equal(10, b.Last());
                 };
